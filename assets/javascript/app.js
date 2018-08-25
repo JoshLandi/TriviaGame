@@ -38,16 +38,64 @@ var triviaGame = {
 
     countdown: function(){
 
+        triviaGame.counter--;
+
+        $("#counter").html(triviaGame.counter);
+        
+        if (triviaGame.counter<=0){
+            console.log("Time's Up!");
+            triviaGame.timeUp();
+        }
+
     },
 
     loadQuestion: function(){
+        
+        timer = setInterval(triviaGame.countdown, 1000);
+
+        $("#wrapper2").html("<h2>" + questions[triviaGame.currentQuestion].question + "</h2>");
+
+        for (var i = 0; i < questions[triviaGame.currentQuestion].answers.length; i++) {
+            $("#wrapper2").append("<button class='answer-button' id='button- " + i + " data-name='" + questions[triviaGame.currentQuestion].answers[i] + "'>" + questions[triviaGame.currentQuestion].answers[i]+"</button>");
+            
+        }
+        
+    },
+
+    nextQuestion: function(){
 
     },
+
+    timeUp: function(){
+
+    },
+
+    results: function(){
+
+    },
+
+    clicked: function(){
+
+    },
+
+    answeredCorrect: function(){
+
+    },
+
+    answeredIncorrect: function(){
+
+    },
+
+    reset: function(){
+
+    },
+
+
 }
 
 //Functions
 
 $("#Begin").on("click", function(){
     $("#Begin").remove();
-    $("<div>").append("<img src='../images/maize1.jpg'>")
+    triviaGame.loadQuestion();
 })
