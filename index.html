@@ -9,7 +9,8 @@
         
             <!-- CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"></link>
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css"></link>
 
         <title>TriviaMaized</title>
     </head>
@@ -17,19 +18,29 @@
 
     <body>
         <!--Heading-->
-        <div id="wrapper">
-            <div class="row" class="container-fluid" class="align-self-center">
-                <div class="col">
-                    <h1>TriviaMaized</h1>
-                </div>
+    <div id="wrapper" class="container-fluid">
+    <header>
+        
+            <div class="jumbotron">
+                <h1 class="display-4" class="text-center">TriviaMaized!</h1>
             </div>
-            
+
+    </header>
         <!--Begin Button-->
             
-            <div id="wrapper1" class="row" class="container-fluid" class="align-self-center">
-                    <div id="wrapper2" class="col"></div>
-                    <button id="Begin">Shuck</button>
+            <div id="wrapper1" class="align-self-center">
+
+        <!--Questions will appear here-->
+                <div class="row">
+                    <div  class="col-sm-12" class="col-centered">
+                     <div id="card" class="card" class="card-body">
+                        <div id="wrapper2" class="col-centered"></div>
+                        <div id="imgDiv"></div>
+                        <button id="Begin">Shuck</button>
+                     </div>
+                    </div>
                 </div>
+            </div>
             
         </div>
 

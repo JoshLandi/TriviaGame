@@ -1,8 +1,66 @@
 button {
+    background-color: azure;
+    background-position: center;
+    border-color: black;
+    text-align: center;
+    color: rgb(14, 138, 14);
+    background-color: rgba(255, 255, 1, 0.801);
+    font-size: 24pt;
+
+}
+
+h1 {
+    color: rgb(11, 202, 11);
+    text-align: center;
+    background-color: rgba(0, 4, 0, 0.61);
+    
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 4, 0, 0.61);
+    
+
+}
+
+body {
+    background-image: url("../images/cornKernals.jpg");
+    
+    
+}
+
+
+.jumbotron {
+    opacity: 0.98;
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    color: white;
+    background-image: url("../images/Maize5.jpg");
+    background-size: cover;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+#card {
     background-image: url("../images/cornButton.png");
     background-position: center;
 }
 
-h1 {
-    color: green;
+#counterH {
+    font-size: 18pt;
+}
+
+#questionH {
+    font-size: 32pt;
+}
+
+#correctH {
+    font-size: 20pt;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 4, 0, 0.61);
 }

@@ -54,8 +54,8 @@ var triviaGame = {
 
         timer = setInterval(triviaGame.countdown, 1000);
 
-        $("#wrapper2").html("<h2>Maize Remaining: <span id='counter'>10</span> seconds</h2>");
-        $("#wrapper2").append("<h2>" + questions[triviaGame.currentQuestion].question + "</h2>");
+        $("#wrapper2").html("<h2 id='counterH'>Maize Remaining: <span id='counter'>10</span> seconds</h2> <br />");
+        $("#wrapper2").append("<h2 id='questionH'>" + questions[triviaGame.currentQuestion].question + "</h2> <br />");
 
         for (var i = 0; i < questions[triviaGame.currentQuestion].answers.length; i++) {
             $("#wrapper2").append("<button class='answer-button' id='button- " + i + "' data-name='" + questions[triviaGame.currentQuestion].answers[i] + "'>" + questions[triviaGame.currentQuestion].answers[i]+"</button>");
@@ -80,8 +80,8 @@ var triviaGame = {
 
         clearInterval(timer);
         triviaGame.unanswered++;
-        $("#wrapper2").html("<h2>OUT OF MAIZE</h2>");
-        $("#wrapper2").append("<h3>The Correct Answer Was: " + questions[triviaGame.currentQuestion].correctAns + "</h3>");
+        $("#wrapper2").html("<h2 id='questionH'>OUT OF MAIZE</h2>");
+        $("#wrapper2").append("<h3 id='correctH'>The Correct Answer Was: " + questions[triviaGame.currentQuestion].correctAns + "</h3>");
 
         if (triviaGame.currentQuestion == questions.length -1){
             
@@ -97,10 +97,10 @@ var triviaGame = {
     results: function(){
 
         clearInterval(timer);
-        $("#wrapper2").html("<h1>Maize Navigated</h1>");
-        $("#wrapper2").append("<h1>Correct: " + triviaGame.correct + "</h1>");
-        $("#wrapper2").append("<h1>Incorrect: " + triviaGame.incorrect + "</h1>");
-        $("#wrapper2").append("<h1>Unanswered: " + triviaGame.unanswered + "</h1>")
+        $("#wrapper2").html("<h1 id='counterH'>Maize Navigated</h1>");
+        $("#wrapper2").append("<h1 id='correctH'>Correct: " + triviaGame.correct + "</h1>");
+        $("#wrapper2").append("<h1 id='correctH'>Incorrect: " + triviaGame.incorrect + "</h1>");
+        $("#wrapper2").append("<h1 id='correctH'>Unanswered: " + triviaGame.unanswered + "</h1>")
 
         $("#wrapper2").append("<button id='reset'>CANT GET ENOUGH</button>")
     },
@@ -128,8 +128,9 @@ var triviaGame = {
         clearInterval(timer);
 
         triviaGame.correct++;
-        $("#wrapper2").html("<h2>YOU'RE A MAIZE MASTER!</h2>");
-
+        $("#wrapper2").html("<h2 id='correctH'>YOU'RE A MAIZE MASTER!</h2>");
+        $("#imgDiv").html("<img src='" + questions[triviaGame.currentQuestion].img + "' alt='Answer Photo'");
+        console.log($("#imgDiv"));
         if (triviaGame.currentQuestion == questions.length -1){
             
             setTimeout(triviaGame.results, 3*1000);
@@ -146,8 +147,8 @@ var triviaGame = {
         clearInterval(timer);
 
         triviaGame.incorrect++;
-        $("#wrapper2").html("<h2>It's aMAIZEing how dumb you are (about maize).</h2>");
-        $("#wrapper2").append("<h3>The Correct Answer Was: " + questions[triviaGame.currentQuestion].correctAns + "</h3>");
+        $("#wrapper2").html("<h2 id='questionH'>It's aMAIZEing how dumb you are (about maize).</h2>");
+        $("#wrapper2").append("<h3 id='counterH'>The Correct Answer Was: " + questions[triviaGame.currentQuestion].correctAns + "</h3>");
 
         if (triviaGame.currentQuestion == questions.length -1){
             
